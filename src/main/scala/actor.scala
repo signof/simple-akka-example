@@ -2,7 +2,9 @@ import com.typesafe.config.ConfigFactory
 import akka.actor.{ ActorRef, Props, Actor, ActorSystem }
 
 
-abstract class CalculatorMessage 
+trait DelaySerializable extends Serializable
+
+abstract class CalculatorMessage extends DelaySerializable
 
 abstract class MathOp extends CalculatorMessage
 abstract class MathResult extends CalculatorMessage
